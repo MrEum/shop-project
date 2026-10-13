@@ -18,13 +18,21 @@ function App() {
   // 로그인 함수
   const handleLogin = (username) => {
     setIsLoggedIn(true);
+    setUsername(username); //로그인한 사용자 상태(ID) 지정
+  }
+
+  // 로그아웃 핸들러 함수
+  const handleLogout = () => {
+    setIsLoggedIn(false);
   }
 
   return (
     <>
       <section className="app">
         <BrowserRouter>
-          <Header isLoggedIn={isLoggedIn} />
+          <Header isLoggedIn={isLoggedIn} 
+          onLogout={handleLogout} username={username}/>
+
           <div className='container'>
             <Routes>
               <Route path='/' element={<Main />} />

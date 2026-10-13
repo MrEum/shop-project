@@ -10,10 +10,10 @@ const Login = ({onLogin}) => {
     })
 
     //  페이지 이동 훅 - useNavigate()
-    const navigate = useNavigate;
+    const navigate = useNavigate();
 
     // 메인 페이지로 이동
-    navigate("/");
+    // navigate("/");
 
     //  로그인 결과 상태 관리
     const [result, setresult] = useState("");
@@ -49,7 +49,7 @@ const Login = ({onLogin}) => {
             setresult("failed");
         }
 
-        setFormData({username: "", password: ""})
+        // setFormData({username: "", password: ""})
     
     }
 
